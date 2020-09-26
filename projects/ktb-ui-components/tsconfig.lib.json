@@ -6,20 +6,16 @@
     "declaration": true,
     "inlineSources": true,
     "types": [],
-    "lib": [
-      "dom",
-      "es2018"
-    ]
+    "lib": ["dom", "es2018"],
+    "paths": {
+      "ktb-ui-components": ["./dist/ktb-ui-components/"],
+      "@angular/*": ["./node_modules/@angular/*"]
+    }
   },
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
     "strictMetadataEmit": true,
     "enableResourceInlining": true
   },
-  "exclude": [
-    "src/test.ts",
-    "**/*.spec.ts",
-    "**/*.stories.ts",
-    "**/*.stories.*"
-  ]
+  "exclude": ["src/test.ts", "**/*.spec.ts", "**/*.stories.ts", "**/*.stories.*"]
 }

@@ -1,7 +1,8 @@
 {
   "extends": "../../tslint.json",
   "rules": {
-    "directive-selector": [true, "attribute", "ui", "camelCase"],
-    "component-selector": [true, "element", "ui", "kebab-case"]
+    "directive-selector": [true, "attribute", "ktb", "camelCase"],
+    "component-selector": [true, ["element", "attribute"], "ktb", ["camelCase", "kebab-case"]],
+    "variable-name": [true, "allow-leading-underscore", "allow-pascal-case"]
   }
 }
