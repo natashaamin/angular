@@ -1,0 +1,104 @@
+.ktb-button {
+  appearance: none;
+  outline: none;
+  border: none;
+  background: none;
+
+  position: relative;
+
+  margin-right: 16px;
+
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: black;
+    opacity: 0;
+
+    transition: 200ms all ease-out;
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:active {
+    &::after {
+      opacity: 0.08;
+    }
+  }
+}
+
+%standard-button {
+  height: 44px;
+  min-width: 152px;
+  padding: 12px 24px;
+
+  border-radius: 4px;
+}
+
+%pill-button {
+  height: 36px;
+  padding: 8px 24px;
+
+  border-radius: 24px;
+}
+
+%solid-button {
+  background: #ffcb00;
+  color: #4a4a49;
+
+  &.ktb-button--disabled {
+    background: #e3e3e3;
+    color: white;
+    pointer-events: none;
+  }
+}
+
+%outline-button {
+  border: 1px solid #ffcb00;
+  color: #4a4a49;
+
+  &.ktb-button--disabled {
+    border-color: #e3e3e3;
+    color: #e3e3e3;
+    pointer-events: none;
+  }
+}
+
+.ktb-button--primary {
+  @extend %standard-button;
+  @extend %solid-button;
+}
+
+.ktb-button--secondary {
+  @extend %standard-button;
+  @extend %outline-button;
+}
+
+.ktb-button--tertiary {
+  @extend %pill-button;
+  @extend %solid-button;
+}
+
+.ktb-button--tertiary-outline {
+  @extend %pill-button;
+  @extend %outline-button;
+}
+
+.ktb-button--ripple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  overflow: hidden;
+  pointer-events: none;
+}
