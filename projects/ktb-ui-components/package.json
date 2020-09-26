@@ -1,0 +1,13 @@
+{
+  "name": "ktb-ui-components",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@angular/cdk": "latest",
+    "@angular/common": "^10.0.5",
+    "@angular/core": "^10.0.5",
+    "@angular/material": "latest"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}
