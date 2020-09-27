@@ -13,6 +13,7 @@
   - [First time setup](#first-time-setup)
   - [Local development](#local-development)
   - [Creating a new component](#creating-a-new-component)
+    - [Add export to primary entry point](#add-export-to-primary-entry-point)
   - [Creating builds](#creating-builds)
   - [Integration testing](#integration-testing)
 
@@ -37,24 +38,29 @@ The general folder structure of this project looks something like this.
 
 ```bash
 ktb-ui-components
-├─ .storybook          # Configuration files for Storybookjs
-├─ projects/           # Source files goes in here
-├─ dist                # The project build goes here
-├─ public              # Static build of the Storybook server
+├─ .storybook                # Configuration files for Storybook
+├─ src/                      # Source files goes in here
+│  ├─ component-name/
+│  ├─ theme/
+│  └─ ...
+│
+├─ dist                      # The project build goes here
+├─ public                    # Static build of the Storybook server
 └─ ...
 ```
 
-The folder to focus on is `projects/ktb-ui-components`, as that is sort of the true directory for the component library.
-
-Digging deeper into it,
+Every component lives in `src/` in their own subfolder and generally will have these files.
 
 ```bash
-ktb-ui-components/projects/ktb-ui-components
-├─ src/                   # Source files goes in here
-│  └─ lib/
-│     ├─ components/      # Components goes here
-│     └─ ktb-ui-theme/    # Shareable theme files goes here
-└─ ...
+/component-name/
+├─ component-name.component.html
+├─ component-name.component.scss
+├─ component-name.component.ts
+├─ component-name.module.ts
+├─ component-name.stories.(ts|mdx) # by default use .ts
+├─ package.json
+├─ public-api.ts
+└─ index.ts
 ```
 
 ### Code style
@@ -134,36 +140,46 @@ This will open a local storybook server on [//localhost:6006](//localhost:6006) 
 
 ### Creating a new component
 
-All components are stored inside `projects//ktb-ui-components/src/lib/components`, and each component should have the following folder structure.
-
-```bash
-/component-name/
-├─ component-name.component.html
-├─ component-name.component.scss
-├─ component-name.component.ts
-├─ component-name.module.ts
-├─ component-name.stories.(ts|mdx) # by default use .ts
-├─ package.json
-├─ public-api.ts
-└─ index.ts
-```
-
 #### Generate component module <!-- omit in toc -->
 
 To begin, use `angular-cli` to generate a `module` and a `component`.
 
 ```bash
-ng generate module components/component-name
-ng generate component components/component-name
+ng generate module component-name
+ng generate component component-name
 ```
 
-When using the `ng generate` commands, the files are outputted to `projects/ktb-ui-components/src/lib`.
+**Important Note**
 
-Thus the command above will have the files outputted at `projects/ktb-ui-components/src/lib/component/component-name/**`.
+Due to an odd limitation of `angular-cli`<sup>[Open Issue](https://github.com/angular/angular-cli/issues/9370)</sup>, these files will be generated in `src/lib/`.
+
+You'll have to manually move them out to the `src` folder, or alternatively, manually create the component files yourself in `src/component-name`
+
+#### Create a story <!-- omit in toc -->
+
+Next, create a `*.stories.ts` or in the new components directory.
+
+This is where you'll declare the component stories for Storybook.
+
+`component-name.stories.ts`
+
+```ts
+import { FooComponent } from './foo.component'
+
+export default {
+  title: 'Example/Foo',
+  component: FooComponent
+}
+
+export const Basic = () => ({
+  component: FooComponent,
+  props:
+})
+```
 
 #### Create entry point files <!-- omit in toc -->
 
-Next, create these 3 files.
+Next, also create these 3 files.
 
 They will allow our components to be better delivered in chunks and subsequently reduce bundle sizes. More on this can be found [from this article](https://medium.com/angular-in-depth/improve-spa-performance-by-splitting-your-angular-libraries-in-multiple-chunks-8c68103692d0).
 
@@ -192,26 +208,14 @@ export * from './foo.module'
 export * from './public-ts'
 ```
 
-#### Create a story <!-- omit in toc -->
+#### Add export to primary entry point
 
-Next, create a `*.stories.ts` or in the new components directory.
+Finally, export your module from the primary library entry point.
 
-This is where you'll declare the component stories for Storybook.
-
-`component-name.stories.ts`
+`src/index.ts`
 
 ```ts
-import { FooComponent } from './foo.component'
-
-export default {
-  title: 'Example/Foo',
-  component: FooComponent
-}
-
-export const Basic = () => ({
-  component: FooComponent,
-  props:
-})
+export * from 'ktb-ui-components/component-name'
 ```
 
 #### Writing Documentations <!-- omit in toc -->

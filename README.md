@@ -9,7 +9,7 @@ This also serves as a scaffold for other components library to built on.
 - [Prerequisites](#prerequisites)
 - [Usage Guide](#usage-guide)
   - [Installing the library](#installing-the-library)
-  - [Using the library](#using-the-library)
+  - [Getting started](#getting-started)
   - [Using the included theme](#using-the-included-theme)
 - [Documentation](#documentation)
 - [Contributing](#contributing)
@@ -66,51 +66,31 @@ As this project is not hosted on any registry, you'll have to clone the repo and
    > **Important Note**  
    > Anytime you install dependencies in your project folder, you'll have to rerun `npm link` as it's not automatically done for you.
 
-### Using the library
+### Getting started
 
-Simply import the `Module` of the component you want use where needed and add the components tag in your template.
+With the library installed, you can now import the `Module` you would like to use where it's needed by adding it to the list of `imports`.
 
-`app.module.ts`
-
-```js
-import { BrowserModule } from '@angular/platform-browser'
-import { NgModule } from '@angular/core'
-import { AppComponent } from './app.component'
-
-// import module
-import { FooModule } from 'ktb-ui-components'
-
-@NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, FooModule],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule {}
-```
-
-`app.component.ts`
+Take note you'll have to import from the module directly like so.
 
 ```ts
-import { Component } from '@angular/core'
-
-@Component({
-  selector: 'app-root',
-  template: `
-    <div>
-      <ui-foo></ui-foo>
-    </div>
-  `,
-  styles: []
+import { ButtonModule } from 'ktb-ui-components/button';
+…
+@NgModule ({....
+  imports: [...,
+  ButtonModule,
+…]
 })
-export class AppComponent {
-  title = 'library-test'
-}
+```
+
+Add the components selector to your template `.html` file and you're good to go!
+
+```html
+<button ktbButton>This is my button</button>
 ```
 
 ### Using the included theme
 
-This library comes included with a `theme.scss` for use in projects.
+This library comes prebundled with a `theme.scss` file allowing you to reuse the styles used to build the components.
 
 Before using it though, it is highly recommended to update your `angular.json` to include the theme directory in `stylePreprocessorOptions.includePaths` to make importing a lot easier.
 
@@ -120,14 +100,12 @@ Before using it though, it is highly recommended to update your `angular.json` t
 {
   ...
   "stylePreprocessorOptions": {
-    "includePaths": ["./node_modules/ktb-ui-components/src/lib"]
+    "includePaths": ["./node_modules/ktb-ui-components/"]
   },
 }
 ```
 
-With that done, you can now import any of the files below.
-
-`app.component.scss`
+With that done, you can now import any of the files below where needed.
 
 ```scss
 // Imports everything
