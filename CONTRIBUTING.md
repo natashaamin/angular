@@ -3,34 +3,55 @@
 ## Table of Contents <!-- omit in toc -->
 
 - [Ground Rules](#ground-rules)
+  - [Branching strategy](#branching-strategy)
+  - [Merge requests](#merge-requests)
+  - [Code quality assurance](#code-quality-assurance)
 - [Codebase](#codebase)
   - [Technologies](#technologies)
   - [Folder structure](#folder-structure)
-  - [Code style](#code-style)
-  - [Branching strategy](#branching-strategy)
+  - [Coding style](#coding-style)
 - [Technical](#technical)
   - [Prerequisites](#prerequisites)
   - [First time setup](#first-time-setup)
   - [Local development](#local-development)
   - [Creating a new component](#creating-a-new-component)
-    - [Add export to primary entry point](#add-export-to-primary-entry-point)
   - [Creating builds](#creating-builds)
   - [Integration testing](#integration-testing)
 
 ## Ground Rules
+
+### Branching strategy
+
+Due to the simplicity of this project, we'll be using [GitHub Flow](https://guides.github.com/introduction/flow/) as apposed to git-flow.
+
+For this repo:
+
+- New features are to branch off from `master`.
+- A PR must be created before merging feature branches to `master`.
+- PR's will be reviewed and tested before merging back to `master`.
+
+#### How to name branches <!-- omit in toc -->
+
+- Components - When creating a new component, prepend the branch with `component/*`. There's also no need to create a new branch for subcomponents, you can just do it in the main component branch.
+
+- Theming - For features pertaining to the theme, prepend the branch with `theme/*`.
+
+### Merge requests
+
+When submitting a merge request, title your merge request as per this template:
+
+`Merge [<branch_name>] Create | Update | Fix <component_name>: <optional description>`
+
+### Code quality assurance
+
+The repo has been set-up to run both `prettier` and `ng lint` on-commit, thus you're allowed to format your code in any way you see fit, and it'll automatically be formatted to a common style when you run `git commit`.
 
 ## Codebase
 
 ### Technologies
 
 - **Angular 10** - This project is intended to be used with the latest version of Angular, and will be kept updated for futureproofing.
-- **Storybook** - A toolkit for developing UI components in isolation. We'll be making full use of this during development and also for documentating our components.
-
-#### Recommendations <!-- omit in toc -->
-
-As this library heavily uses Storybook, it it highly recommended to go through it's documentation to have a feel and understanding of it, as this contribution guide treats as if you already have prior knowledge of Storybook.
-
-- [Storybook's Website](https://storybook.js.org/) - Their main documentation, make sure to view the Angular versions when available. (The switch is on the side menu).
+- **Storybook** - A toolkit for developing UI components in isolation. We'll be making full use of this during development and also for documentating our components. Their website can be found here https://storybook.js.org.
 
 ### Folder structure
 
@@ -63,44 +84,25 @@ Every component lives in `src/` in their own subfolder and generally will have t
 └─ index.ts
 ```
 
-### Code style
-
-#### General rules <!-- omit in toc -->
-
-- Prefer `const`, `let` when absolutely necessary, and never `var`.<sup>[reference](https://github.com/airbnb/javascript#references)</sup>
-- Prefer arrow functions callbacks.<sup>[reference](https://github.com/airbnb/javascript#arrow-functions)</sup>
-- Components must be pure/dumb. Meaning they should not depend on any services or global states.<sup>[reference](https://dev.to/mquanit/concept-of-smart-dumb-components-in-angular-2fom)</sup>
-
-#### Quality assurance <!-- omit in toc -->
-
-The repo has been set-up to run both `prettier` and `ng lint` on-commit, thus you're allowed to format your code in any way you see fit, and it'll automatically be formatted to a common style when you run `git commit`.
+### Coding style
 
 There is no strict restriction to follow any JS style guide, but it's still good practice to _at least_ try to use them for cleaner code.
 
 The styleguide referenced most would be the one by Airbnb:
 
 - [Airbnb Styleguide](https://github.com/airbnb/javascript#references)
-
-But others you can look at are these;
-
 - [Google](https://google.github.io/styleguide/jsguide.html)
 - [StandardJS](https://standardjs.com/)
 
-### Branching strategy
+But when it comes to Angular, generally we'll be using the standard [Angular coding style guide](https://angular.io/guide/styleguide) with a few rules disabled to allow better library developement.
 
-Due to the simplicity of this project, we'll be using [GitHub Flow](https://guides.github.com/introduction/flow/) as apposed to git-flow.
+#### General rules <!-- omit in toc -->
 
-For this repo:
+With that said, there still are a few ground rules to follow,
 
-- New features are to branch off from `master`.
-- A PR must be created before merging feature branches to `master`.
-- PR's will be reviewed and tested before merging back to `master`.
-
-#### How to name branches <!-- omit in toc -->
-
-- Components - When creating a new component, prepend the branch with `component/*`. There's also no need to create a new branch for subcomponents, you can just do it in the main component branch.
-
-- Theming - For features pertaining to the theme, prepend the branch with `theme/*`.
+- Prefer `const`, `let` when absolutely necessary, and never `var`.<sup>[reference](https://github.com/airbnb/javascript#references)</sup>
+- Prefer arrow functions callbacks.<sup>[reference](https://github.com/airbnb/javascript#arrow-functions)</sup>
+- Components must be pure/dumb. Meaning they should not depend on any services or global states.<sup>[reference](https://dev.to/mquanit/concept-of-smart-dumb-components-in-angular-2fom)</sup>
 
 ## Technical
 
@@ -208,7 +210,7 @@ export * from './foo.module'
 export * from './public-ts'
 ```
 
-#### Add export to primary entry point
+#### Add export to primary entry point <!-- omit in toc -->
 
 Finally, export your module from the primary library entry point.
 

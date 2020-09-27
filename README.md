@@ -13,6 +13,7 @@ This also serves as a scaffold for other components library to built on.
   - [Using the included theme](#using-the-included-theme)
 - [Documentation](#documentation)
 - [Contributing](#contributing)
+  - [Quick start](#quick-start)
 - [License](#license)
 
 ## Prerequisites
@@ -121,7 +122,9 @@ With that done, you can now import any of the files below where needed.
 
 This libraries documentation is powered by Storybook, allowing you to view every single component in isolation and their variations.
 
-Simply run this script, and a local Storybook server of all production ready components will open on [localhost:8080](//localhost:8080).
+An online version of the documentation can be found here: https://acc-ktb-ui-components.netlify.app/
+
+Alternatively, you can run this script to view a local version of the documentation hosted on [localhost:8080](//localhost:8080).
 
 ```bash
 npm run docs
@@ -129,7 +132,18 @@ npm run docs
 
 ## Contributing
 
-Please take a look at [CONTRIBUTING.md](./CONTRIBUTING.md) on how to contribute to this library.
+Please take a look at [CONTRIBUTING.md](./CONTRIBUTING.md) for a more detailed explanation on how to contribute to this library.
+
+### Quick start
+
+- clone thi repository.
+- run `npm install` to install all dependencies.
+- run `npm start` to start Storybook.
+- create you component and it's module in `src/`.
+- create `index.ts`, `public-api.ts` and `package.json` for `ng-packgr` to recognize the component as an entry point.
+- write your components `.stories.ts`.
+- periodically run `npm run lint` to ensure there are no lint errors.
+- submit a MR when you're done.
 
 ## License
 
