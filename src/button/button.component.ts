@@ -7,7 +7,6 @@ export enum ButtonVariants {
   Tertiary = 'tertiary',
   TertiaryOutline = 'tertiary-ouline'
 }
-
 @Component({
   selector: '[ktbButton]',
   templateUrl: './button.component.html',

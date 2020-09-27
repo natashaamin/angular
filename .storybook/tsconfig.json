@@ -1,9 +1,24 @@
 {
-  "extends": "../projects/ktb-ui-components/tsconfig.lib.json",
+  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "types": ["node"]
+    "baseUrl": "",
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es2016", "dom"],
+    "sourceMap": true,
+    "mapRoot": "./../",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "outDir": "./../dist",
+    "rootDirs": ["./../src", "./../stories"],
+    "target": "es5",
+    "inlineSources": true,
+    "typeRoots": ["./../node_modules/@types"],
+    "paths": {
+      "ktb-ui-components/*": ["./../src/*/index"]
+    }
   },
-  "exclude": ["../src/test.ts", "../src/**/*.spec.ts", "../projects/**/*.spec.ts"],
-  "include": ["../src/**/*", "../projects/**/*"],
-  "files": ["./typings.d.ts"]
+  "exclude": ["../test.ts", "../src/**/*.spec.ts"],
+  "include": ["../src/**/*"]
 }

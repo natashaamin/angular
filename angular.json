@@ -5,37 +5,34 @@
   "projects": {
     "ktb-ui-components": {
       "projectType": "library",
-      "root": "projects/ktb-ui-components",
-      "sourceRoot": "projects/ktb-ui-components/src",
+      "root": "src",
+      "sourceRoot": "src",
       "prefix": "ktb",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/ktb-ui-components/tsconfig.lib.json",
-            "project": "projects/ktb-ui-components/ng-package.json"
+            "tsConfig": "./src/tsconfig.lib.json",
+            "project": "./src/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ktb-ui-components/tsconfig.lib.prod.json"
+              "tsConfig": "./src/tsconfig.lib.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ktb-ui-components/src/test.ts",
-            "tsConfig": "projects/ktb-ui-components/tsconfig.spec.json",
-            "karmaConfig": "projects/ktb-ui-components/karma.conf.js"
+            "main": "./test.ts",
+            "tsConfig": "./tsconfig.spec.json",
+            "karmaConfig": "./karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "projects/ktb-ui-components/tsconfig.lib.json",
-              "projects/ktb-ui-components/tsconfig.spec.json"
-            ],
+            "tsConfig": ["./src/tsconfig.lib.json", "./tsconfig.spec.json"],
             "exclude": ["**/node_modules/**"]
           }
         }
@@ -45,7 +42,11 @@
   "defaultProject": "ktb-ui-components",
   "schematics": {
     "@schematics/angular:component": {
+      "prefix": "ktb",
       "style": "scss"
+    },
+    "@schematics/angular:directive": {
+      "prefix": "ktb"
     }
   }
 }

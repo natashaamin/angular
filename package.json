@@ -4,13 +4,12 @@
   "scripts": {
     "start": "npm run build:docs:json && start-storybook -p 6006",
     "build:lib": "ng build --prod",
-    "build:docs:json": "compodoc -p ./projects/ktb-ui-components/tsconfig.lib.json -e json -d ./dist",
+    "build:docs:json": "compodoc -p ./src/tsconfig.lib.json -e json -d ./dist",
     "build:docs": "npm run build:docs:json && build-storybook -o public --no-dll",
     "build": "npm run build:lib && npm run build:docs",
-    "deploy:lib": "git subtree push --prefix dist/ktb-ui-components origin dist",
     "docs": "npx http-server public",
     "lint:staged": "lint-staged",
-    "lint:prettier": "npx prettier --write \"projects/\"",
+    "lint:prettier": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,md,html,scss}\"",
     "lint:ng": "ng lint",
     "lint": "npm run lint:prettier && npm run lint:ng"
   },
@@ -68,8 +67,8 @@
     "typescript": "~3.9.5"
   },
   "lint-staged": {
-    "projects/**/*.{js,jsx,ts,tsx,md,html,css}": "prettier --write",
-    "projects/**/*.{ts,tsx}": "tslint --fix"
+    "src/**/*.{js,jsx,ts,tsx,md,html,scss}": "prettier --write",
+    "src/**/*.{ts,tsx}": "tslint --fix"
   },
   "husky": {
     "hooks": {

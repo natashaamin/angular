@@ -1,0 +1,9 @@
+{
+  "$schema": "./../node_modules/ng-packagr/ng-package.schema.json",
+  "deleteDestPath": true,
+  "dest": "./../dist/ktb-ui-components/",
+  "lib": {
+    "entryFile": "./index.ts"
+  },
+  "assets": ["./ktb-ui-theme/**/*.scss"]
+}

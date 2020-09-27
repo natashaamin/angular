@@ -1,7 +1,7 @@
 import { Meta, moduleMetadata } from '@storybook/angular'
 
-import { ButtonComponent, ButtonModule, ButtonVariants } from './index'
 import { MatIconModule } from '@angular/material/icon'
+import { ButtonComponent, ButtonModule, ButtonVariants } from 'ktb-ui-components/button'
 
 export default {
   title: 'Button',
