@@ -121,7 +121,7 @@ npm install -g @angular/cli
 The first step to start development, is to clone this repo.
 
 ```bash
-git clone https://gitlab.com/<repo_source>/ktb-ui-components.git
+git clone https://gitlab.com/ktb-corporate-portal/ktb-ui-components.git
 ```
 
 Then proceed to install the dependencies as per usual.
@@ -159,7 +159,7 @@ You'll have to manually move them out to the `src` folder, or alternatively, man
 
 #### Create a story <!-- omit in toc -->
 
-Next, create a `*.stories.ts` or in the new components directory.
+Next, create a `*.stories.ts` in the new components directory.
 
 This is where you'll declare the component stories for Storybook.
 
