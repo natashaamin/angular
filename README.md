@@ -35,7 +35,7 @@ As this project is not hosted on any registry, you'll have to clone the repo and
 1. Clone the repo, and install dependencies.
 
    ```bash
-   git clone https://gitlab.com/bryon.sigawin/ktb-ui-components-v2.git
+   git clone https://gitlab.com/ktb-corporate-portal/ktb-ui-components.git
 
    # Use npm not yarn
    npm install
@@ -51,7 +51,7 @@ As this project is not hosted on any registry, you'll have to clone the repo and
 
    ```bash
    # Assuming you're at the root directory
-   cd dist/<name_of_library>/
+   cd dist/ktb-ui-components/
 
    # Create the link
    npm link
@@ -61,7 +61,7 @@ As this project is not hosted on any registry, you'll have to clone the repo and
 
    ```bash
    # Assuming you're inside your projects root directory,
-   npm link <project_name>
+   npm link ktb-ui-components
    ```
 
    > **Important Note**  
