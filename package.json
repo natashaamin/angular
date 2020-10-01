@@ -67,12 +67,12 @@
     "typescript": "~3.9.5"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,md,html,scss}": "prettier --write",
+    "src/**/*.{js,jsx,ts,tsx,mdx,html,scss}": "prettier --write",
     "src/**/*.{ts,tsx}": "tslint --fix"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged --verbose"
     }
   }
 }
