@@ -1,6 +1,5 @@
-import { Meta, moduleMetadata } from '@storybook/angular'
+import { Meta, Story, moduleMetadata } from '@storybook/angular'
 
-import { MatIconModule } from '@angular/material/icon'
 import { ButtonComponent, ButtonModule, ButtonVariants } from 'ktb-ui-components/button'
 
 export default {
@@ -8,23 +7,26 @@ export default {
   component: ButtonComponent,
   decorators: [
     moduleMetadata({
-      imports: [ButtonModule, MatIconModule]
+      imports: [ButtonModule]
     })
   ],
   argTypes: {
     ktbButton: {
-      label: 'Button variants',
+      name: 'Button variants',
       defaultValue: ButtonVariants.Primary,
       description: `Controls the button styles. Can be one of \`${Object.values(ButtonVariants).join(' | ')}\``,
       control: {
         type: 'select',
         options: Object.values(ButtonVariants)
       }
+    },
+    disabled: {
+      defaultValue: true
     }
   }
 } as Meta
 
-const Template = (args: ButtonComponent) => ({
+const Template: Story = (args: ButtonComponent) => ({
   component: ButtonComponent,
   props: args,
   template: `
@@ -34,11 +36,11 @@ const Template = (args: ButtonComponent) => ({
       <span>+</span>
       With Icon
     </button>
-    <button [ktbButton]="ktbButton" disabled>Disabled Button</button>
+    <button [ktbButton]="ktbButton" [disabled]="disabled">Disabled Button</button>
   `
 })
 
-export const Overview = () => ({
+export const Overview: Story = () => ({
   component: ButtonComponent,
   template: `
     <h2>Default button state</h2>
@@ -54,22 +56,22 @@ export const Overview = () => ({
   `
 })
 
-export const Primary = Template.bind({})
+export const Primary: Story = Template.bind({})
 Primary.args = {
   ktbButton: ButtonVariants.Primary
 }
 
-export const Secondary = Template.bind({})
+export const Secondary: Story = Template.bind({})
 Secondary.args = {
   ktbButton: ButtonVariants.Secondary
 }
 
-export const Tertiary = Template.bind({})
+export const Tertiary: Story = Template.bind({})
 Tertiary.args = {
   ktbButton: ButtonVariants.Tertiary
 }
 
-export const TertiaryOutline = Template.bind({})
+export const TertiaryOutline: Story = Template.bind({})
 TertiaryOutline.args = {
   ktbButton: ButtonVariants.TertiaryOutline
 }

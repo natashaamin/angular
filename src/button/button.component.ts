@@ -5,7 +5,7 @@ export enum ButtonVariants {
   Primary = 'primary',
   Secondary = 'secondary',
   Tertiary = 'tertiary',
-  TertiaryOutline = 'tertiary-ouline'
+  TertiaryOutline = 'tertiary-outline'
 }
 @Component({
   selector: '[ktbButton]',
