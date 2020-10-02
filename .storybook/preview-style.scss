@@ -1,0 +1,32 @@
+%text-color-white {
+  color: #fff;
+}
+
+%text-color-black {
+  color: #000;
+}
+
+%big-box {
+  height: 150px;
+  width: 350px;
+  padding: 20px;
+}
+
+%small-box {
+  height: 25px;
+  width: 375px;
+  padding: 5px 0px 5px 15px;
+}
+
+%square-box {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  height: 150px;
+  width: 150px;
+  margin: 20px;
+}
+
+%caption-width {
+  width: 150px;
+}

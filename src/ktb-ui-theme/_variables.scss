@@ -1,0 +1,84 @@
+// Primary Color
+$precious-blue-900: #002240;
+$precious-blue-800: #003258;
+$precious-blue-700: #013c64;
+$precious-blue-600: #0d456f;
+$precious-blue-500: #164c77;
+$precious-blue-400: #416487;
+$precious-blue-300: #647e9a;
+$precious-blue-200: #8ea2b7;
+$precious-blue-100: #bac6d4;
+$precious-blue-50: #e4e8ed;
+
+// Primary Gradient Color
+$grey-gradient: linear-gradient(45.28deg, #e3e3e3 0%, rgba(242, 242, 242, 0) 101.5%);
+$precious-blue-gradient1: linear-gradient(90deg, #002240 0%, #003258 100%);
+$precious-blue-gradient2: linear-gradient(180deg, #8ea2b7 -37.49%, #416487 53.7%, #002240 112.95%);
+
+// Neutrals
+$dark-grey: #4a4a49;
+$medium-grey: #868686;
+$grey: #bbbbbb;
+$medium-light-grey: #e3e3e3;
+$light-grey: #f2f2f2;
+$pale-grey: #f5f5f5;
+$white: #ffffff;
+$overlay: rgba(2, 2, 2, 0.65);
+
+// Accent Color
+$golden-yellow-400: #ffcb00;
+$golden-yellow-300: #ffd743;
+$golden-yellow-200: #ffe17c;
+$golden-yellow-100: #ffedb0;
+$golden-yellow-50: #fff8e0;
+
+// Semantic
+$success: #0ebac5;
+$error: #a70303;
+$alert: #ffcb00;
+
+// Chart
+$bright-teal-001: #4ed8da;
+$bright-red-001: #e06950;
+$light-blue: #81cff4;
+$ktb-blue: #00a6e6;
+$precious-blue-gradient01: linear-gradient(180deg, #4ed8da 0%, #00a6e6 100%);
+$precious-blue-gradient02: linear-gradient(180deg, #e3e3e3 0%, #bbbbbb 100%);
+
+//shortcut
+$color-primary: $precious-blue-900;
+$color-accent: $golden-yellow-400;
+
+// Typography
+$font-size-h1: 36px;
+$font-size-h2: 32px;
+$font-size-h3: 28px;
+$font-size-h4: 24px;
+$font-size-h5: 20px;
+$font-size-body: 14px;
+$font-size-subtitle1: 16px;
+$font-size-subtitle2: 14px;
+$font-size-label: 14px;
+$font-size-button: 14px;
+$font-size-caption1: 10px;
+$font-size-caption2: 12px;
+
+$line-height-h1: 48px;
+$line-height-h2: 42px;
+$line-height-h3: 36px;
+$line-height-h4: 32px;
+$line-height-h5: 28px;
+$line-height-body: 20px;
+$line-height-subtitle1: 24px;
+$line-height-subtitle2: 20px;
+$line-height-label: 20px;
+$line-height-button: 20px;
+$line-height-caption1: 16px;
+$line-height-caption2: 18px;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+$font-family-krungthai-fast: Krungthai Fast;
+$font-family-krungthai-smart: Krungthai Smart;

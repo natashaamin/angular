@@ -1,5 +1,6 @@
 @import '../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
 @import '../src/ktb-ui-theme/theme.scss';
+@import './preview-style.scss';
 
 :root {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
@@ -20,4 +21,356 @@
   font-weight: bold;
   text-transform: uppercase;
   margin: 0.5rem 0;
+}
+
+//primary
+.precious-blue-900 {
+  @extend %big-box;
+  @extend %text-color-white;
+  position: relative;
+  background-color: $color-primary;
+}
+
+.precious-blue-800 {
+  @extend %small-box;
+  @extend %text-color-white;
+  position: relative;
+  background-color: $precious-blue-800;
+}
+
+.precious-blue-700 {
+  @extend %small-box;
+  @extend %text-color-white;
+  position: relative;
+  background-color: $precious-blue-700;
+}
+
+.precious-blue-600 {
+  @extend %small-box;
+  @extend %text-color-white;
+  position: relative;
+  background-color: $precious-blue-600;
+}
+
+.precious-blue-500 {
+  @extend %small-box;
+  @extend %text-color-white;
+  position: relative;
+  background-color: $precious-blue-500;
+}
+
+.precious-blue-400 {
+  @extend %small-box;
+  @extend %text-color-white;
+  position: relative;
+  background-color: $precious-blue-400;
+}
+
+.precious-blue-300 {
+  @extend %small-box;
+  @extend %text-color-white;
+  position: relative;
+  background-color: $precious-blue-300;
+}
+
+.precious-blue-200 {
+  @extend %small-box;
+  @extend %text-color-white;
+  position: relative;
+  background-color: $precious-blue-200;
+}
+
+.precious-blue-100 {
+  @extend %small-box;
+  @extend %text-color-white;
+  position: relative;
+  background-color: $precious-blue-100;
+}
+
+.precious-blue-50 {
+  @extend %small-box;
+  @extend %text-color-white;
+  position: relative;
+  background-color: $precious-blue-50;
+}
+
+//gradient
+.grey-gradient {
+  @extend %square-box;
+  @extend %text-color-black;
+  border: 1px solid;
+  top: -21px;
+  background: $grey-gradient;
+}
+
+.precious-blue-gradient1 {
+  @extend %square-box;
+  @extend %text-color-white;
+  background: $precious-blue-gradient1;
+}
+
+.precious-blue-gradient2 {
+  @extend %square-box;
+  @extend %text-color-white;
+  background: $precious-blue-gradient2;
+}
+
+//neutral
+.dark-grey {
+  @extend %square-box;
+  @extend %text-color-white;
+  background: $dark-grey;
+}
+
+.medium-grey {
+  @extend %square-box;
+  @extend %text-color-white;
+  background: $medium-grey;
+}
+
+.grey {
+  @extend %square-box;
+  @extend %text-color-white;
+  background: $grey;
+}
+
+.medium-light-grey {
+  @extend %square-box;
+  @extend %text-color-white;
+  background: $medium-light-grey;
+}
+
+.light-grey {
+  @extend %square-box;
+  @extend %text-color-black;
+  background: $light-grey;
+}
+
+.pale-grey {
+  @extend %square-box;
+  @extend %text-color-black;
+  background: $pale-grey;
+}
+
+.white {
+  @extend %square-box;
+  @extend %text-color-black;
+  border: 1px solid;
+  background: $white;
+}
+
+.overlay {
+  @extend %square-box;
+  @extend %text-color-white;
+  background: $overlay;
+}
+
+//secondary
+.golden-yellow-400 {
+  @extend %big-box;
+  @extend %text-color-white;
+  position: relative;
+  background-color: $color-accent;
+}
+
+.golden-yellow-300 {
+  @extend %small-box;
+  @extend %text-color-white;
+  position: relative;
+  background-color: $golden-yellow-300;
+}
+
+.golden-yellow-200 {
+  @extend %small-box;
+  @extend %text-color-white;
+  position: relative;
+  background-color: $golden-yellow-200;
+}
+
+.golden-yellow-100 {
+  @extend %small-box;
+  @extend %text-color-white;
+  position: relative;
+  background-color: $golden-yellow-100;
+}
+
+.golden-yellow-50 {
+  @extend %small-box;
+  @extend %text-color-white;
+  position: relative;
+  background-color: $golden-yellow-50;
+}
+
+//semantic
+.success {
+  @extend %square-box;
+  @extend %text-color-white;
+  top: -21px;
+  background: $success;
+}
+
+.error {
+  @extend %square-box;
+  @extend %text-color-white;
+  top: -21px;
+  background: $error;
+}
+
+.alert {
+  @extend %square-box;
+  @extend %text-color-white;
+  background: $alert;
+}
+
+//chart
+.bright-teal-001 {
+  @extend %square-box;
+  @extend %text-color-white;
+  background: $bright-teal-001;
+}
+
+.bright-red-001 {
+  @extend %square-box;
+  @extend %text-color-white;
+  background: $bright-red-001;
+}
+
+.light-blue {
+  @extend %square-box;
+  @extend %text-color-white;
+  background: $light-blue;
+}
+
+.ktb-blue {
+  @extend %square-box;
+  @extend %text-color-white;
+  top: -21px;
+  background: $ktb-blue;
+}
+
+.precious-blue-gradient01 {
+  @extend %square-box;
+  @extend %text-color-white;
+  background: $precious-blue-gradient01;
+}
+
+.precious-blue-gradient02 {
+  @extend %square-box;
+  @extend %text-color-white;
+  background: $precious-blue-gradient02;
+}
+
+// color text styles
+.stick-right {
+  position: absolute;
+  right: 20px;
+}
+
+.gradient-short-text-middle {
+  position: relative;
+  top: 60px;
+  bottom: 60px;
+}
+
+.gradient-long-text-middle {
+  position: relative;
+  top: 45px;
+  bottom: 45px;
+}
+
+//header
+.h1-light {
+  @include font-style-h1($font-family-krungthai-fast, $font-weight-light);
+}
+
+.h1-regular {
+  @include font-style-h1($font-family-krungthai-fast, $font-weight-regular);
+}
+
+.h1-bold {
+  @include font-style-h1($font-family-krungthai-fast, $font-weight-bold);
+}
+
+.h2-light {
+  @include font-style-h2($font-family-krungthai-fast, $font-weight-light);
+}
+
+.h2-regular {
+  @include font-style-h2($font-family-krungthai-fast, $font-weight-regular);
+}
+
+.h2-bold {
+  @include font-style-h2($font-family-krungthai-fast, $font-weight-bold);
+}
+
+.h3-regular {
+  @include font-style-h3($font-family-krungthai-fast, $font-weight-regular);
+}
+
+.h3-bold {
+  @include font-style-h3($font-family-krungthai-fast, $font-weight-bold);
+}
+
+.h4-regular {
+  @include font-style-h4($font-family-krungthai-fast, $font-weight-regular);
+}
+
+.h4-bold {
+  @include font-style-h4($font-family-krungthai-fast, $font-weight-bold);
+}
+
+.h5-regular {
+  @include font-style-h5($font-family-krungthai-fast, $font-weight-regular);
+}
+
+.h5-bold {
+  @include font-style-h5($font-family-krungthai-fast, $font-weight-bold);
+}
+
+.body-dark-grey {
+  @include font-style-body($font-family-krungthai-smart, $font-weight-regular, $dark-grey)
+}
+
+.body-medium-grey {
+  @include font-style-body($font-family-krungthai-smart, $font-weight-regular, $medium-grey)
+}
+
+.subtitle1-medium-grey-bold {
+  @include font-style-subtitle1($font-family-krungthai-fast, $medium-grey)
+}
+
+.subtitle1-grey-bold {
+  @include font-style-subtitle1($font-family-krungthai-fast, $grey)
+}
+
+.subtitle2-regular {
+  @include font-style-subtitle2($font-family-krungthai-smart)
+}
+
+.label-bold {
+  @include font-style-label($font-family-krungthai-fast)
+}
+
+.button-bold {
+  @include font-style-button($font-family-krungthai-fast)
+}
+
+.caption1-regular {
+  @extend %caption-width;
+  @include font-style-caption1($font-family-krungthai-smart)
+}
+
+.caption2-regular {
+  @extend %caption-width;
+  @include font-style-caption2($font-family-krungthai-smart)
+}
+
+.typography-text-placement {
+  display: inline-block;
+  margin-right: 70px;
+  font-size: 45px;
+}
+
+.empty-box {
+  height: 87px;
 }
