@@ -1,0 +1,88 @@
+@mixin font-style-h1($font-family: sans-serif, $font-weight: 400) {
+  font-family: $font-family;
+  font-size: $font-size-h1;
+  font-weight: $font-weight;
+  line-height: $line-height-h1;
+  color: $color-primary;
+}
+
+@mixin font-style-h2($font-family: sans-serif, $font-weight: 400) {
+  font-family: $font-family;
+  font-size: $font-size-h2;
+  font-weight: $font-weight;
+  line-height: $line-height-h2;
+}
+
+@mixin font-style-h3($font-family: sans-serif, $font-weight: 400) {
+  font-family: $font-family;
+  font-size: $font-size-h3;
+  font-weight: $font-weight;
+  line-height: $line-height-h3;
+}
+
+@mixin font-style-h4($font-family: sans-serif, $font-weight: 400) {
+  font-family: $font-family;
+  font-size: $font-size-h4;
+  font-weight: $font-weight;
+  line-height: $line-height-h4;
+}
+
+@mixin font-style-h5($font-family: sans-serif, $font-weight: 400) {
+  font-family: $font-family;
+  font-size: $font-size-h5;
+  font-weight: $font-weight;
+  line-height: $line-height-h5;
+}
+
+@mixin font-style-body($font-family: sans-serif, $font-weight: 400, $color: $dark-grey) {
+  font-family: $font-family;
+  font-size: $font-size-body;
+  font-weight: $font-weight;
+  line-height: $line-height-body;
+  color: $color;
+}
+
+@mixin font-style-subtitle1($font-family: sans-serif, $color: $medium-grey) {
+  font-family: $font-family;
+  font-size: $font-size-subtitle1;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-subtitle1;
+  color: $color;
+}
+
+@mixin font-style-subtitle2($font-family: sans-serif) {
+  font-family: $font-family;
+  font-size: $font-size-subtitle2;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-subtitle2;
+}
+
+@mixin font-style-label($font-family: sans-serif) {
+  font-family: $font-family;
+  font-size: $font-size-label;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-label;
+  color: $color-primary;
+}
+
+@mixin font-style-button($font-family: sans-serif) {
+  font-family: $font-family;
+  font-size: $font-size-button;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-button;
+  color: $dark-grey;
+}
+
+@mixin font-style-caption1($font-family: sans-serif) {
+  font-family: $font-family;
+  font-size: $font-size-caption1;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-caption1;
+}
+
+@mixin font-style-caption2($font-family: sans-serif) {
+  font-family: $font-family;
+  font-size: $font-size-caption2;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-caption2;
+}
