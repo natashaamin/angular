@@ -1,17 +1,26 @@
 image: trion/ng-cli
 
 stages:
+  - install
   - build
   - lint
 
 cache:
+  key: ${CI_COMMIT_REF_SLUG}
   paths:
-    - node_modules/
+    - .npm/
+
+before_script:
+  - npm ci --cache .npm --prefer-offline
+
+install:
+  stage: install
+  script:
+    - npm run install
 
 build:
   stage: build
   script:
-    - npm install
     - npm run build
 
 lint:
