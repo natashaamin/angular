@@ -1,0 +1,68 @@
+@import '../ktb-ui-theme/theme.scss';
+
+.success {
+  background-color: #e0f7f7;
+  width: 1140px;
+  height: 56px;
+  border-radius: 8px;
+  padding: 0px;
+  border: 1px solid $ktb-blue;
+  display: flex;
+  align-items: center;
+}
+
+.error {
+  background-color: #fee9eb;
+  width: 1140px;
+  height: 56px;
+  border-radius: 8px;
+  padding: 0px;
+  border: 1px solid $error;
+  display: flex;
+  align-items: center;
+}
+
+.alert {
+  background-color: $golden-yellow-50;
+  width: 1140px;
+  height: 56px;
+  border-radius: 8px;
+  padding: 0px;
+  border: 1px solid $golden-yellow-400;
+  display: flex;
+  align-items: center;
+}
+
+div.success--text {
+  font-family: $font-family-krungthai-fast;
+  font-size: $font-size-body;
+  color: $success;
+  line-height: 22px;
+  font-weight: 700;
+  flex: 1;
+}
+
+div.error--text {
+  font-family: $font-family-krungthai-fast;
+  font-size: $font-size-body;
+  color: $error;
+  text-align: center;
+  line-height: 22px;
+  font-weight: 700;
+  flex: 1;
+}
+
+div.alert--text {
+  font-family: $font-family-krungthai-fast;
+  font-size: $font-size-body;
+  color: $dark-grey;
+  text-align: center;
+  line-height: 22px;
+  font-weight: 700;
+  flex: 1;
+}
+
+.close {
+  color: $medium-grey;
+  margin-right: 21.67px;
+}
