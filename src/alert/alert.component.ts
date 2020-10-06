@@ -9,7 +9,7 @@ import { AlertService } from './alert.service'
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.scss']
 })
-export class AlertComponent implements OnInit {
+export class AlertComponent implements OnInit, OnDestroy {
   @Input() id = 'default-alert'
   @Input() fade = true
 
@@ -24,6 +24,10 @@ export class AlertComponent implements OnInit {
     })
   }
 
+  ngOnDestroy(): void {
+    this.alertSubscription.unsubscribe()
+  }
+
   removeAlert(alert: Alert): void {
     if (!this.alerts.includes(alert)) return
 
@@ -32,7 +36,7 @@ export class AlertComponent implements OnInit {
 
       setTimeout(() => {
         this.alerts = this.alerts.filter((x) => x !== alert)
-      }, 250)
+      }, 10)
     } else {
       this.alerts = this.alerts.filter((x) => x !== alert)
     }
