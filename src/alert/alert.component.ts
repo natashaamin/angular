@@ -9,25 +9,27 @@ import { AlertService } from './alert.service'
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.scss']
 })
-export class AlertComponent implements OnInit, OnDestroy {
-  @Input() id = 'default-alert'
-  @Input() fade = true
-
+export class AlertComponent implements OnInit {
   alerts: Alert[] = []
-  alertSubscription: Subscription
-
   alert: any
+
+  @Input() get alertObj(): Alert {
+    return this.alert
+  }
+  set alertObj(obj: Alert) {
+    this.alert = Object.assign({}, obj)
+  }
+  @Input() fade = true
 
   constructor(private alertService: AlertService) {}
 
   ngOnInit(): void {
     this.alertService.currentOption.subscribe((alert) => {
-      if (alert) this.alert = alert
+      if (alert) {
+        console.log(alert)
+        this.alert = alert
+      }
     })
-  }
-
-  ngOnDestroy(): void {
-    this.alertSubscription.unsubscribe()
   }
 
   removeAlert(alert: Alert): void {

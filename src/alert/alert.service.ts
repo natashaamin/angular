@@ -15,19 +15,19 @@ export class AlertService {
       option: 1,
       type: AlertType.Success,
       message:
-        'ALERT: These are scam calls targeting customers to make bank transfers. DO NOT disclose any account details, USER Id, PINS or SMS OTPs. Learn more.'
+        'ALERT: These are scam calls targeting customers to make bank transfers. DO NOT disclose any account details, USER Id, PINS or SMS OTPs.'
     },
     {
       option: 2,
       type: AlertType.Error,
       message:
-        'ALERT: These are scam calls targeting customers to make bank transfers. DO NOT disclose any account details, USER Id, PINS or SMS OTPs. Learn more.'
+        'ALERT: These are scam calls targeting customers to make bank transfers. DO NOT disclose any account details, USER Id, PINS or SMS OTPs.'
     },
     {
       option: 3,
       type: AlertType.Warning,
       message:
-        'ALERT: These are scam calls targeting customers to make bank transfers. DO NOT disclose any account details, USER Id, PINS or SMS OTPs. Learn more.'
+        'ALERT: These are scam calls targeting customers to make bank transfers. DO NOT disclose any account details, USER Id, PINS or SMS OTPs.'
     }
   ]
 

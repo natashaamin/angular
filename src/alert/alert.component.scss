@@ -42,6 +42,15 @@ div.success--text {
   flex: 1;
 }
 
+div.success--text a {
+  font-family: $font-family-krungthai-fast;
+  font-size: $font-size-body;
+  color: $success;
+  line-height: 22px;
+  font-weight: 700;
+  flex: 1;
+}
+
 div.error--text {
   font-family: $font-family-krungthai-fast;
   font-size: $font-size-body;
@@ -52,7 +61,27 @@ div.error--text {
   flex: 1;
 }
 
+div.error--text a {
+  font-family: $font-family-krungthai-fast;
+  font-size: $font-size-body;
+  color: $error;
+  text-align: center;
+  line-height: 22px;
+  font-weight: 700;
+  flex: 1;
+}
+
 div.alert--text {
+  font-family: $font-family-krungthai-fast;
+  font-size: $font-size-body;
+  color: $dark-grey;
+  text-align: center;
+  line-height: 22px;
+  font-weight: 700;
+  flex: 1;
+}
+
+div.alert--text a {
   font-family: $font-family-krungthai-fast;
   font-size: $font-size-body;
   color: $dark-grey;
