@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { Observable, Subject } from 'rxjs'
+import { Observable, Subject, BehaviorSubject } from 'rxjs'
 import { filter } from 'rxjs/operators'
 
 import { Alert, AlertType } from './alert.model'
@@ -10,27 +10,41 @@ import { Alert, AlertType } from './alert.model'
 export class AlertService {
   constructor() {}
 
-  private subject = new Subject<Alert>()
-  private defaultId = 'default-alert'
+  alerts = [
+    {
+      option: 1,
+      type: AlertType.Success,
+      message:
+        'ALERT: These are scam calls targeting customers to make bank transfers. DO NOT disclose any account details, USER Id, PINS or SMS OTPs. Learn more.'
+    },
+    {
+      option: 2,
+      type: AlertType.Error,
+      message:
+        'ALERT: These are scam calls targeting customers to make bank transfers. DO NOT disclose any account details, USER Id, PINS or SMS OTPs. Learn more.'
+    },
+    {
+      option: 3,
+      type: AlertType.Warning,
+      message:
+        'ALERT: These are scam calls targeting customers to make bank transfers. DO NOT disclose any account details, USER Id, PINS or SMS OTPs. Learn more.'
+    }
+  ]
 
-  onAlert(id = this.defaultId): Observable<Alert> {
-    return this.subject.asObservable().pipe(filter((x) => x && x.id === id))
+  private option = new BehaviorSubject<any>(undefined)
+  currentOption = this.option.asObservable()
+
+  onClickButton(option, msg?): void {
+    const alert = this.alerts.filter((a) => {
+      if (a.option === option) return a
+    })
+    // let extracted_alert = Object.assign({}, alert[0]);
+    const extractedAlert = alert[0]
+    if (msg) extractedAlert.message = msg
+    this.updateOptions(extractedAlert)
   }
 
-  success(message: string, options?: any): void {
-    this.alert(new Alert({ ...options, type: AlertType.Success, message }))
-  }
-
-  error(message: string, options?: any): void {
-    this.alert(new Alert({ ...options, type: AlertType.Error, message }))
-  }
-
-  warn(message: string, options?: any): void {
-    this.alert(new Alert({ ...options, type: AlertType.Warning, message }))
-  }
-
-  alert(alert: Alert): void {
-    alert.id = alert.id || this.defaultId
-    this.subject.next(alert)
+  updateOptions(value): void {
+    this.option.next(value)
   }
 }

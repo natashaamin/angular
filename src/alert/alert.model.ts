@@ -1,5 +1,4 @@
 export class Alert {
-  id: string
   type: AlertType
   message: string
   fade: boolean

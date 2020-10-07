@@ -1,10 +1,12 @@
-<div ktbContainer *ngFor="let alert of alerts" class="{{ alertStyle(alert) }}">
-  <div class="iconContainer">
-    <p>Icon</p>
-    <!--<ktb-icons class="icon-margin" name="tick"></ktb-icons>-->
+<ng-container *ngIf="alert">
+  <div ktbContainer class="{{ alertStyle(alert) }}">
+    <div class="iconContainer">
+      <p>Icon</p>
+      <!--<ktb-icons class="icon-margin" name="tick"></ktb-icons>-->
+    </div>
+    <div class="{{ alertStyle(alert) }}--text">
+      <span [innerHTML]="alert.message"></span>
+    </div>
+    <a class="close" (click)="alert = undefined">&times;</a>
   </div>
-  <div class="{{ alertStyle(alert) }}--text">
-    <span [innerHTML]="alert.message"></span>
-  </div>
-  <a class="close" (click)="removeAlert(alert)">&times;</a>
-</div>
+</ng-container>

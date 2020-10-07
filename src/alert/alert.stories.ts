@@ -3,62 +3,37 @@ import { moduleMetadata, storiesOf } from '@storybook/angular'
 import { AlertModule, AlertService } from 'ktb-ui-components/alert'
 
 @Component({
-  selector: 'alert-button',
+  selector: 'alert-dynamic-button',
   template: `
     <ktbAlert></ktbAlert>
-
     <div>
-      <button
-        class="btn btn-success m-1"
-        (click)="
-          _alertService.success(
-            'ALERT: These are scam calls targeting customers to make bank transfers. DO NOT disclose any account details, USER Id, PINS or SMS OTPs. Learn more.',
-            options
-          )
-        "
-      >
+      <button class="btn btn-success m-1" (click)="alertService.onClickButton(1, 'msg 1')">
         Success
       </button>
-      <button
-        class="btn btn-danger m-1"
-        (click)="
-          _alertService.error(
-            'ALERT: These are scam calls targeting customers to make bank transfers. DO NOT disclose any account details, USER Id, PINS or SMS OTPs. Learn more.',
-            options
-          )
-        "
-      >
+      <button class="btn btn-danger m-1" (click)="alertService.onClickButton(2, 'msg 2')">
         Error
       </button>
-      <button
-        class="btn btn-warning m-1"
-        (click)="
-          _alertService.warn(
-            'ALERT: These are scam calls targeting customers to make bank transfers. DO NOT disclose any account details, USER Id, PINS or SMS OTPs. Learn more.',
-            options
-          )
-        "
-      >
+      <button class="btn btn-warning m-1" (click)="alertService.onClickButton(3, 'msg 3')">
         Warning
       </button>
     </div>
   `,
   providers: [AlertService]
 })
-class AlertButtonComponent {
-  constructor(public _alertService: AlertService) {}
+class AlertBasicComponent {
+  constructor(public alertService: AlertService) {}
 }
 
 storiesOf('Alert Notification', module)
   .addDecorator(
     moduleMetadata({
-      declarations: [AlertButtonComponent],
+      declarations: [AlertBasicComponent],
       imports: [AlertModule]
     })
   )
-  .add('Alert Notification', () => ({
+  .add('Dynamic', () => ({
     template: `
-            <alert-button></alert-button>
+            <alert-dynamic-button></alert-dynamic-button>
             `,
     encapsulation: ViewEncapsulation.None
   }))

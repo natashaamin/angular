@@ -16,11 +16,13 @@ export class AlertComponent implements OnInit, OnDestroy {
   alerts: Alert[] = []
   alertSubscription: Subscription
 
-  constructor(private _alertService: AlertService) {}
+  alert: any
+
+  constructor(private alertService: AlertService) {}
 
   ngOnInit(): void {
-    this.alertSubscription = this._alertService.onAlert(this.id).subscribe((alert) => {
-      this.alerts.push(alert)
+    this.alertService.currentOption.subscribe((alert) => {
+      if (alert) this.alert = alert
     })
   }
 
