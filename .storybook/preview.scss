@@ -94,74 +94,60 @@
   background-color: $precious-blue-50;
 }
 
-//gradient
-.grey-gradient {
-  @extend %square-box;
-  @extend %text-color-black;
-  border: 1px solid;
-  top: -21px;
-  background: $grey-gradient;
-}
-
-.precious-blue-gradient1 {
-  @extend %square-box;
-  @extend %text-color-white;
-  background: $precious-blue-gradient1;
-}
-
-.precious-blue-gradient2 {
-  @extend %square-box;
-  @extend %text-color-white;
-  background: $precious-blue-gradient2;
-}
-
 //neutral
 .dark-grey {
-  @extend %square-box;
+  @extend %big-box;
   @extend %text-color-white;
+  position: relative;
   background: $dark-grey;
 }
 
 .medium-grey {
-  @extend %square-box;
+  @extend %small-box;
   @extend %text-color-white;
+  position: relative;
   background: $medium-grey;
 }
 
 .grey {
-  @extend %square-box;
+  @extend %small-box;
   @extend %text-color-white;
+  position: relative;
   background: $grey;
 }
 
 .medium-light-grey {
-  @extend %square-box;
+  @extend %small-box;
   @extend %text-color-white;
+  position: relative;
   background: $medium-light-grey;
 }
 
 .light-grey {
-  @extend %square-box;
+  @extend %small-box;
   @extend %text-color-black;
+  position: relative;
   background: $light-grey;
 }
 
 .pale-grey {
-  @extend %square-box;
+  @extend %small-box;
   @extend %text-color-black;
+  position: relative;
   background: $pale-grey;
 }
 
 .white {
-  @extend %square-box;
+  @extend %small-box;
   @extend %text-color-black;
-  border: 1px solid;
+  position: relative;
   background: $white;
 }
 
 .overlay {
-  @extend %square-box;
+  @extend %small-box;
   @extend %text-color-white;
+  position: relative;
   background: $overlay;
 }
 
@@ -201,18 +187,16 @@
   background-color: $golden-yellow-50;
 }
 
-//semantic
+// communications
 .success {
   @extend %square-box;
   @extend %text-color-white;
-  top: -21px;
   background: $success;
 }
 
 .error {
   @extend %square-box;
   @extend %text-color-white;
-  top: -21px;
   background: $error;
 }
 
@@ -222,42 +206,90 @@
   background: $alert;
 }
 
-//chart
-.bright-teal-001 {
+.highlight {
   @extend %square-box;
   @extend %text-color-white;
-  background: $bright-teal-001;
+  background: $highlight;
 }
 
-.bright-red-001 {
+// extended
+.medium-turquoise {
   @extend %square-box;
   @extend %text-color-white;
-  background: $bright-red-001;
+  background: $medium-turquoise;
 }
 
-.light-blue {
+.terra-cotta-red {
   @extend %square-box;
   @extend %text-color-white;
-  background: $light-blue;
+  background: $terra-cotta-red;
+}
+
+.ktb-baby-blue {
+  @extend %square-box;
+  @extend %text-color-white;
+  background: $ktb-baby-blue;
 }
 
 .ktb-blue {
   @extend %square-box;
   @extend %text-color-white;
-  top: -21px;
   background: $ktb-blue;
 }
 
-.precious-blue-gradient01 {
+.ktb-blue-ncs {
   @extend %square-box;
   @extend %text-color-white;
-  background: $precious-blue-gradient01;
+  background: $ktb-blue-ncs;
 }
 
-.precious-blue-gradient02 {
+//gradient
+.dashboard-top-bar {
   @extend %square-box;
   @extend %text-color-white;
-  background: $precious-blue-gradient02;
+  background: $dashboard-top-bar;
+}
+
+.small-card {
+  @extend %square-box;
+  @extend %text-color-white;
+  background: $small-card;
+}
+
+.large-card {
+  @extend %square-box;
+  @extend %text-color-white;
+  background: $large-card;
+}
+
+.sub-menu {
+  @extend %square-box;
+  @extend %text-color-white;
+  background: $sub-menu;
+}
+
+.ktb-top-bar {
+  @extend %square-box;
+  @extend %text-color-white;
+  background: $ktb-top-bar;
+}
+
+.mobile-card {
+  @extend %square-box;
+  @extend %text-color-white;
+  background: $mobile-card;
+}
+
+.chart-02-blue {
+  @extend %square-box;
+  @extend %text-color-white;
+  background: $chart-02-blue;
+}
+
+.chart-02-grey {
+  @extend %square-box;
+  @extend %text-color-white;
+  background: $chart-02-grey;
 }
 
 // color text styles
@@ -272,97 +304,156 @@
   bottom: 60px;
 }
 
-.gradient-long-text-middle {
-  position: relative;
-  top: 45px;
-  bottom: 45px;
-}
-
 //header
 .h1-light {
+  @extend %text-margin;
   @include font-style-h1($font-family-krungthai-fast, $font-weight-light);
 }
 
 .h1-regular {
+  @extend %text-margin;
   @include font-style-h1($font-family-krungthai-fast, $font-weight-regular);
 }
 
 .h1-bold {
+  @extend %text-margin;
   @include font-style-h1($font-family-krungthai-fast, $font-weight-bold);
 }
 
 .h2-light {
+  @extend %text-margin;
   @include font-style-h2($font-family-krungthai-fast, $font-weight-light);
 }
 
 .h2-regular {
+  @extend %text-margin;
   @include font-style-h2($font-family-krungthai-fast, $font-weight-regular);
 }
 
 .h2-bold {
+  @extend %text-margin;
   @include font-style-h2($font-family-krungthai-fast, $font-weight-bold);
 }
 
 .h3-regular {
+  @extend %text-margin;
   @include font-style-h3($font-family-krungthai-fast, $font-weight-regular);
 }
 
 .h3-bold {
+  @extend %text-margin;
   @include font-style-h3($font-family-krungthai-fast, $font-weight-bold);
 }
 
 .h4-regular {
+  @extend %text-margin;
   @include font-style-h4($font-family-krungthai-fast, $font-weight-regular);
 }
 
 .h4-bold {
+  @extend %text-margin;
   @include font-style-h4($font-family-krungthai-fast, $font-weight-bold);
 }
 
 .h5-regular {
+  @extend %text-margin;
   @include font-style-h5($font-family-krungthai-fast, $font-weight-regular);
 }
 
 .h5-bold {
+  @extend %text-margin;
   @include font-style-h5($font-family-krungthai-fast, $font-weight-bold);
 }
 
-.body-dark-grey {
-  @include font-style-body($font-family-krungthai-smart, $font-weight-regular, $dark-grey)
+.body1-light {
+  @extend %text-margin;
+  @include font-style-body1($font-family-krungthai-smart, $font-weight-light)
 }
 
-.body-medium-grey {
-  @include font-style-body($font-family-krungthai-smart, $font-weight-regular, $medium-grey)
+.body1-regular {
+  @extend %text-margin;
+  @include font-style-body1($font-family-krungthai-smart, $font-weight-regular)
 }
 
-.subtitle1-medium-grey-bold {
-  @include font-style-subtitle1($font-family-krungthai-fast, $medium-grey)
+.body2-light {
+  @extend %text-margin;
+  @include font-style-body2($font-family-krungthai-smart, $font-weight-light)
 }
 
-.subtitle1-grey-bold {
-  @include font-style-subtitle1($font-family-krungthai-fast, $grey)
+.body2-regular {
+  @extend %text-margin;
+  @include font-style-body2($font-family-krungthai-smart, $font-weight-regular)
+}
+
+.body3-light {
+  @extend %text-margin;
+  @include font-style-body3($font-family-krungthai-smart, $font-weight-light)
+}
+
+.body3-regular {
+  @extend %text-margin;
+  @include font-style-body3($font-family-krungthai-smart, $font-weight-regular)
+}
+
+.subtitle1-regular {
+  @extend %text-margin;
+  @include font-style-subtitle1($font-family-krungthai-fast, $font-weight-regular)
+}
+
+.subtitle1-bold {
+  @extend %text-margin;
+  @include font-style-subtitle1($font-family-krungthai-fast, $font-weight-bold)
 }
 
 .subtitle2-regular {
-  @include font-style-subtitle2($font-family-krungthai-smart)
+  @extend %text-margin;
+  @include font-style-subtitle2($font-family-krungthai-fast, $font-weight-regular)
 }
 
-.label-bold {
-  @include font-style-label($font-family-krungthai-fast)
-}
-
-.button-bold {
-  @include font-style-button($font-family-krungthai-fast)
+.subtitle2-bold {
+  @extend %text-margin;
+  @include font-style-subtitle2($font-family-krungthai-fast, $font-weight-bold)
 }
 
 .caption1-regular {
+  @extend %text-margin;
   @extend %caption-width;
-  @include font-style-caption1($font-family-krungthai-smart)
+  @include font-style-caption1($font-family-krungthai-fast, $font-weight-regular)
+}
+
+.caption1-bold {
+  @extend %text-margin;
+  @extend %caption-width;
+  @include font-style-caption1($font-family-krungthai-fast, $font-weight-bold)
 }
 
 .caption2-regular {
+  @extend %text-margin;
   @extend %caption-width;
-  @include font-style-caption2($font-family-krungthai-smart)
+  @include font-style-caption2($font-family-krungthai-fast, $font-weight-regular)
+}
+
+.caption2-bold {
+  @extend %text-margin;
+  @extend %caption-width;
+  @include font-style-caption2($font-family-krungthai-fast, $font-weight-bold)
+}
+
+.label-regular {
+  @include font-style-label($font-family-krungthai-fast, $font-weight-regular)
+}
+
+.label-bold {
+  @include font-style-label($font-family-krungthai-fast, $font-weight-bold)
+}
+
+.button-bold {
+  @extend %button-spacing;
+  @include font-style-button($font-family-krungthai-fast, $font-weight-bold)
+}
+
+.header-margin {
+  margin-bottom: 30px;
 }
 
 .typography-text-placement {
@@ -371,8 +462,8 @@
   font-size: 45px;
 }
 
-.empty-box {
-  height: 87px;
+.empty-box-header {
+  height: 58px;
 }
 
 // icons library
