@@ -21,7 +21,7 @@ import { AlertService } from './alert.service'
   encapsulation: ViewEncapsulation.None
 })
 export class AlertComponent implements OnInit {
-  private alert: any
+  alert: any
 
   alerts: Alert[] = []
 
