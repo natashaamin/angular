@@ -1,48 +1,37 @@
 import { Component, EventEmitter, ViewEncapsulation, Output, OnInit } from '@angular/core'
 import { moduleMetadata, storiesOf } from '@storybook/angular'
 import { AlertModule, AlertService } from 'ktb-ui-components/alert'
-import { Subject } from 'rxjs'
+
 @Component({
   selector: 'alert-dynamic-button',
   template: `
     <ktbAlert></ktbAlert>
     <div>
-      <button class="btn btn-success m-1" (click)="alertService.onClickButton(1, 'msg 1')">
+      <button class="btn btn-success m-1" (click)="showAlert(1, 'Aaaaaaaaaaaaaaaaa')">
         Success
       </button>
-      <button class="btn btn-danger m-1" (click)="alertService.onClickButton(2, 'msg 2')">
+      <button class="btn btn-danger m-1" (click)="showAlert(2, 'I wanna die')">
         Error
       </button>
-      <button class="btn btn-warning m-1" (click)="alertService.onClickButton(3, 'msg 3')">
+      <button class="btn btn-warning m-1" (click)="showAlert(3, 'Travis Scott is lit')">
         Warning
       </button>
     </div>
   `,
   providers: [AlertService]
 })
-class AlertDynamicComponent implements OnInit {
-  @Output() actionClicked = new EventEmitter()
-
-  actionSubject = new Subject<any>()
-
-  actions = [
-    {
-      text: 'Actions',
-      click: this.actionSubject
-    }
-  ]
-
+class AlertDynamicComponent {
   links = [
     {
-      href: 'https://google.com',
-      text: 'Learn more'
+      text: 'Learn more.',
+      href: 'https://ibm.com'
     }
   ]
 
-  constructor(public alertService: AlertService) {}
+  constructor(private alertService: AlertService) {}
 
-  ngOnInit(): void {
-    this.actions.forEach((action) => action.click.subscribe({ next: () => this.actionClicked.emit() }))
+  showAlert(option, message): void {
+    this.alertService.onClickButton(option, message, this.links)
   }
 }
 

@@ -6,8 +6,8 @@
     </div>
     <div class="{{ alertStyle(alert) }}--text">
       <span [innerHTML]="alert.message"></span>
-      <ng-container *ngFor="let link of alertObj.links">
-        <a [href]="link.href"> {{ link.text }}</a>
+      <ng-container *ngFor="let link of alert.link">
+        <a [href]="link.href" target="_blank"> {{ link.text }}</a>
       </ng-container>
     </div>
     <a class="close" (click)="alert = undefined">&times;</a>

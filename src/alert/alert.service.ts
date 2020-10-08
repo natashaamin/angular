@@ -34,17 +34,29 @@ export class AlertService {
   private option = new BehaviorSubject<any>(undefined)
   currentOption = this.option.asObservable()
 
-  onClickButton(option, msg?): void {
-    const alert = this.alerts.filter((a) => {
-      if (a.option === option) return a
+  onClickButton(option, message?, link?): void {
+    let type
+    let extractedAlert
+    let getMessage
+    const x = []
+
+    const alert = this.alerts.filter((val) => {
+      if (val.option === option) {
+        type = val.type
+      }
     })
-    // let extracted_alert = Object.assign({}, alert[0]);
-    const extractedAlert = alert[0]
-    if (msg) extractedAlert.message = msg
-    this.updateOptions(extractedAlert)
+
+    link.forEach((l) => {
+      x.push(l)
+    })
+
+    extractedAlert = Object.assign({}, alert[0])
+    getMessage = extractedAlert.message = message
+
+    this.updateOptions(new Alert({ type, message: getMessage, link: x }))
   }
 
-  updateOptions(value): void {
-    this.option.next(value)
+  updateOptions(alert: Alert): void {
+    this.option.next(alert)
   }
 }
