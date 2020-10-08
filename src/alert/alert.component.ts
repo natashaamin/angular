@@ -19,7 +19,6 @@ export class AlertComponent implements OnInit {
   set alertObj(obj: Alert) {
     this.alert = Object.assign({}, obj)
   }
-  @Input() fade = true
 
   constructor(private alertService: AlertService) {}
 
@@ -29,20 +28,6 @@ export class AlertComponent implements OnInit {
         this.alert = alert
       }
     })
-  }
-
-  removeAlert(alert: Alert): void {
-    if (!this.alerts.includes(alert)) return
-
-    if (this.fade) {
-      this.alerts.find((x) => x === alert).fade = true
-
-      setTimeout(() => {
-        this.alerts = this.alerts.filter((x) => x !== alert)
-      }, 10)
-    } else {
-      this.alerts = this.alerts.filter((x) => x !== alert)
-    }
   }
 
   alertStyle(alert: Alert): any {
@@ -57,9 +42,6 @@ export class AlertComponent implements OnInit {
     }
 
     classes.push(alertType[alert.type])
-    if (alert.fade) {
-      classes.push('fade')
-    }
     return classes.join(' ')
   }
 }

@@ -1,7 +1,6 @@
 export class Alert {
   type: AlertType
   message: string
-  fade: boolean
   link: AlertLink[]
 
   constructor(init?: Partial<Alert>) {
