@@ -48,21 +48,21 @@ storiesOf('Alert Notification', module)
                 option: 1,
                 type: 0,
                 message: 'ALERT: These are scam calls targeting customers to make bank transfers. DO NOT disclose any account details, USER Id, PINS or SMS OTPs.',
-                links: links
+                link: links
               }">
               </ktbAlert>
               <ktbAlert [alertObj]="{
                 option: 2,
                 type: 1,
                 message: 'ALERT: These are scam calls targeting customers to make bank transfers. DO NOT disclose any account details, USER Id, PINS or SMS OTPs.',
-                links: links
+                link: links
               }">
               </ktbAlert>
               <ktbAlert [alertObj]="{
                 option: 3,
                 type: 2,
                 message: 'ALERT: These are scam calls targeting customers to make bank transfers. DO NOT disclose any account details, USER Id, PINS or SMS OTPs.',
-                links: links
+                link: links
               }">
               </ktbAlert>
             `,

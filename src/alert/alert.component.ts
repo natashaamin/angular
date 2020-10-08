@@ -10,7 +10,6 @@ import { AlertService } from './alert.service'
   styleUrls: ['./alert.component.scss']
 })
 export class AlertComponent implements OnInit {
-  alerts: Alert[] = []
   alert: any
 
   @Input() get alertObj(): Alert {
@@ -23,9 +22,9 @@ export class AlertComponent implements OnInit {
   constructor(private alertService: AlertService) {}
 
   ngOnInit(): void {
-    this.alertService.currentOption.subscribe((alert) => {
-      if (alert) {
-        this.alert = alert
+    this.alertService.currentOption.subscribe((value) => {
+      if (value) {
+        this.alert = value
       }
     })
   }

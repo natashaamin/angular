@@ -56,7 +56,7 @@ export class AlertService {
     this.updateOptions(new Alert({ type, message: getMessage, link: x }))
   }
 
-  updateOptions(alert: Alert): void {
-    this.option.next(alert)
+  updateOptions(alertObj: Alert): void {
+    this.option.next(alertObj)
   }
 }
