@@ -11,7 +11,7 @@ import {
   ViewEncapsulation
 } from '@angular/core'
 import { Subscription } from 'rxjs'
-import { Alert, AlertType } from './alert.model'
+import { Alert, AlertLink, AlertType } from './alert.model'
 import { AlertService } from './alert.service'
 
 @Component({
@@ -23,6 +23,8 @@ import { AlertService } from './alert.service'
 export class AlertComponent implements OnInit {
   private alert: any
 
+  alerts: Alert[] = []
+
   @Input() get alertObj(): Alert {
     return this.alert
   }
@@ -33,9 +35,9 @@ export class AlertComponent implements OnInit {
   constructor(private alertService: AlertService) {}
 
   ngOnInit(): void {
-    this.alertService.currentOption.subscribe((value) => {
-      if (value) {
-        this.alert = value
+    this.alertService.currentOption.subscribe((alert) => {
+      if (alert) {
+        this.alert = alert
       }
     })
   }

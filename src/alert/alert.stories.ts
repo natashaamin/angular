@@ -10,7 +10,7 @@ import { AlertModule, AlertService } from 'ktb-ui-components/alert'
       <button class="btn btn-success m-1" (click)="showAlert(1, 'Aaaaaaaaaaaaaaaaa')">
         Success
       </button>
-      <button class="btn btn-danger m-1" (click)="showAlert(2, 'I wanna die')">
+      <button class="btn btn-danger m-1" (click)="showAlert(2, 'I wanna')">
         Error
       </button>
       <button class="btn btn-warning m-1" (click)="showAlert(3, 'Travis Scott is lit')">
