@@ -26,7 +26,6 @@ export class AlertComponent implements OnInit {
   ngOnInit(): void {
     this.alertService.currentOption.subscribe((alert) => {
       if (alert) {
-        console.log(alert)
         this.alert = alert
       }
     })
