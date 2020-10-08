@@ -23,8 +23,6 @@ import { AlertService } from './alert.service'
 export class AlertComponent implements OnInit {
   alert: any
 
-  alerts: Alert[] = []
-
   @Input() get alertObj(): Alert {
     return this.alert
   }

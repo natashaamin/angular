@@ -1,7 +1,7 @@
 @import '../ktb-ui-theme/theme.scss';
 
 .success {
-  background-color: #e0f7f7;
+  background: #e0f7f7;
   width: 1140px;
   height: 56px;
   border-radius: 8px;
@@ -12,7 +12,7 @@
 }
 
 .error {
-  background-color: #fee9eb;
+  background: #fee9eb;
   width: 1140px;
   height: 56px;
   border-radius: 8px;
@@ -23,7 +23,7 @@
 }
 
 .alert {
-  background-color: $golden-yellow-50;
+  background: $golden-yellow-50;
   width: 1140px;
   height: 56px;
   border-radius: 8px;
