@@ -51,48 +51,42 @@ export const Primary = () => ({
     `
 })
 
-export const Gradient = () => ({
-  template: `
-    <div class="grey-gradient">
-      <span class="gradient-short-text-middle">Gray Gradient</span>
-    </div>
-    <div class="precious-blue-gradient1">
-      <span class="gradient-long-text-middle">Precious Blue Gradient 1</span>
-    </div>
-    <div class="precious-blue-gradient2">
-      <span class="gradient-long-text-middle">Precious Blue Gradient 2</span>
-    </div>
-    `
-})
-
 export const Neutral = () => ({
   template: `
     <div class="dark-grey">
-      <span class="gradient-short-text-middle">Dark Grey</span>
+      <span>Dark Grey</span>
+      <span class="stick-right">#4a4a49</span>
+      <br>
     </div>
-    <div class="medium-grey">
-      <span class="gradient-short-text-middle">Medium Grey</span>
+      <div class="medium-grey">  
+      <span>Medium Grey</span>      
+      <span class="stick-right">#013C64</span> 
     </div>
     <div class="grey">
-      <span class="gradient-short-text-middle">Grey</span>
+      <span>Grey</span>      
+      <span class="stick-right">#bbbbbb</span> 
     </div>
     <div class="medium-light-grey">
-      <span class="gradient-short-text-middle">Medium Light Gray</span>
+      <span>Medium Light Gray</span>      
+      <span class="stick-right">#e3e3e3</span> 
     </div>
-    <br>
     <div class="light-grey">
-      <span class="gradient-short-text-middle">Light Grey</span>
+      <span>Light Grey</span>      
+      <span class="stick-right">#f2f2f2</span> 
     </div>
     <div class="pale-grey">
-      <span class="gradient-short-text-middle">Pale Grey</span>
+      <span>Pale Grey</span>      
+      <span class="stick-right">#f5f5f5</span> 
     </div>
     <div class="white">
-      <span class="gradient-short-text-middle">White</span>
+      <span>White</span>      
+      <span class="stick-right">#ffffff</span> 
     </div>
     <div class="overlay">
-      <span class="gradient-short-text-middle">Overlay</span>
+      <span>Overlay</span>      
+      <span class="stick-right">#020202 65% Opacity</span> 
     </div>
-    `
+  `
 })
 
 export const Secondary = () => ({
@@ -122,40 +116,68 @@ export const Secondary = () => ({
     `
 })
 
-export const Semantic = () => ({
+export const Communication = () => ({
   template: `
     <div class="success">
       <span class="gradient-short-text-middle">Success</span>
     </div>
     <div class="error">
-      <span class="gradient-short-text-middle">Error, Failed</span>
+      <span class="gradient-short-text-middle">Failed</span>
     </div>
     <div class="alert">
-      <span class="gradient-long-text-middle">Alert, Caution, Warning</span>
+      <span class="gradient-short-text-middle">Warning</span>
     </div>
-    `
+    <div class="highlight">
+      <span class="gradient-short-text-middle">Highlight</span>
+    </div>
+  `
 })
 
-export const Chart = () => ({
+export const Extended = () => ({
   template: `
-    <div class="bright-teal-001">
-      <span class="gradient-short-text-middle">Bright Teal</span>
+    <div class="medium-turquoise">
+      <span class="gradient-short-text-middle">Medium Turquoise</span>
     </div>
-    <div class="bright-red-001">
-      <span class="gradient-short-text-middle">Bright Red</span>
+    <div class="terra-cotta-red">
+      <span class="gradient-short-text-middle">Terra Cotta Red</span>
     </div>
-    <div class="light-blue">
-      <span class="gradient-short-text-middle">Light Blue</span>
+    <div class="ktb-baby-blue">
+      <span class="gradient-short-text-middle">KTB Baby Blue</span>
     </div>
-    <br>
     <div class="ktb-blue">
     <span class="gradient-short-text-middle">KTB Blue</span>
     </div>
-    <div class="precious-blue-gradient01">
-      <span class="gradient-long-text-middle">Precious Blue Gradient 1</span>
+    <div class="ktb-blue-ncs">
+      <span class="gradient-short-text-middle">KTB Blue NCS</span>
     </div>
-    <div class="precious-blue-gradient02">
-      <span class="gradient-long-text-middle">Precious Blue Gradient 2</span>
+  `
+})
+
+export const Gradient = () => ({
+  template: `
+    <div class="dashboard-top-bar">
+      <span class="gradient-short-text-middle">Dashboard Top Bar</span>
+    </div>
+    <div class="small-card">
+      <span class="gradient-short-text-middle">Small Card</span>
+    </div>
+    <div class="large-card">
+      <span class="gradient-short-text-middle">Large Card</span>
+    </div>
+    <div class="sub-menu">
+      <span class="gradient-short-text-middle">Sub Menu</span>
+    </div>
+    <div class="mobile-card">
+      <span class="gradient-short-text-middle">Mobile Card</span>
+    </div>
+    <div class="ktb-top-bar">
+      <span class="gradient-short-text-middle">KTB Top Bar</span>
+    </div>
+    <div class="chart-02-blue">
+      <span class="gradient-short-text-middle">Chart 02 Blue</span>
+    </div>
+    <div class="chart-02-grey">
+      <span class="gradient-short-text-middle">Chart 02 Grey</span>
     </div>
     `
 })

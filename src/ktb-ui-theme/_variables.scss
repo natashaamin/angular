@@ -10,11 +10,6 @@ $precious-blue-200: #8ea2b7;
 $precious-blue-100: #bac6d4;
 $precious-blue-50: #e4e8ed;
 
-// Primary Gradient Color
-$grey-gradient: linear-gradient(45.28deg, #e3e3e3 0%, rgba(242, 242, 242, 0) 101.5%);
-$precious-blue-gradient1: linear-gradient(90deg, #002240 0%, #003258 100%);
-$precious-blue-gradient2: linear-gradient(180deg, #8ea2b7 -37.49%, #416487 53.7%, #002240 112.95%);
-
 // Neutrals
 $dark-grey: #4a4a49;
 $medium-grey: #868686;
@@ -32,49 +27,67 @@ $golden-yellow-200: #ffe17c;
 $golden-yellow-100: #ffedb0;
 $golden-yellow-50: #fff8e0;
 
-// Semantic
+// Communication Color
 $success: #0ebac5;
 $error: #a70303;
 $alert: #ffcb00;
+$highlight: #3794fc;
 
-// Chart
-$bright-teal-001: #4ed8da;
-$bright-red-001: #e06950;
-$light-blue: #81cff4;
+// Extended Color
+$medium-turquoise: #4ed8da;
+$terra-cotta-red: #e06950;
+$ktb-baby-blue: #81cff4;
 $ktb-blue: #00a6e6;
-$precious-blue-gradient01: linear-gradient(180deg, #4ed8da 0%, #00a6e6 100%);
-$precious-blue-gradient02: linear-gradient(180deg, #e3e3e3 0%, #bbbbbb 100%);
+$ktb-blue-ncs: #008ec4;
+
+// Gradient Color
+$dashboard-top-bar: linear-gradient(90deg, #002240 0%, #003258 100%);
+$small-card: linear-gradient(180deg, #8ea2b7 -37.49%, #416487 53.7%, #002240 112.95%);
+$large-card: linear-gradient(180deg, #8ea2b7 -49.21%, #416487 33.61%, #002240 125.45%);
+$sub-menu: linear-gradient(170.6deg, #8ea2b7 -27.43%, #416487 47%, #002240 126.93%);
+$mobile-card: linear-gradient(184.03deg, #416487 -12.2%, #002240 155.15%);
+$ktb-top-bar: linear-gradient(180deg, #00a6e6 0%, #008ec4 97.92%);
+$chart-02-blue: linear-gradient(180deg, #4ed8da 0%, #00a6e6 100%);
+$chart-02-grey: linear-gradient(180deg, #e3e3e3 0%, #bbbbbb 100%);
 
 //shortcut
 $color-primary: $precious-blue-900;
 $color-accent: $golden-yellow-400;
 
-// Typography
-$font-size-h1: 36px;
-$font-size-h2: 32px;
-$font-size-h3: 28px;
-$font-size-h4: 24px;
-$font-size-h5: 20px;
-$font-size-body: 14px;
-$font-size-subtitle1: 16px;
-$font-size-subtitle2: 14px;
-$font-size-label: 14px;
-$font-size-button: 14px;
-$font-size-caption1: 10px;
-$font-size-caption2: 12px;
+@function calculateRem($size, $base) {
+  @return $size / $base * 1rem;
+}
 
-$line-height-h1: 48px;
-$line-height-h2: 42px;
-$line-height-h3: 36px;
-$line-height-h4: 32px;
-$line-height-h5: 28px;
-$line-height-body: 20px;
-$line-height-subtitle1: 24px;
-$line-height-subtitle2: 20px;
-$line-height-label: 20px;
-$line-height-button: 20px;
-$line-height-caption1: 16px;
-$line-height-caption2: 18px;
+// Typography
+$font-size-h1: calculateRem(36px, 20px);
+$font-size-h2: calculateRem(32px, 20px);
+$font-size-h3: calculateRem(28px, 20px);
+$font-size-h4: calculateRem(24px, 20px);
+$font-size-h5: calculateRem(20px, 20px);
+$font-size-body1: calculateRem(18px, 14px);
+$font-size-body2: calculateRem(16px, 14px);
+$font-size-body3: calculateRem(14px, 14px);
+$font-size-subtitle1: calculateRem(16px, 14px);
+$font-size-subtitle2: calculateRem(14px, 14px);
+$font-size-caption1: calculateRem(12px, 10px);
+$font-size-caption2: calculateRem(10px, 10px);
+$font-size-label: calculateRem(14px, 14px);
+$font-size-button: calculateRem(14px, 14px);
+
+$line-height-h1: calculateRem(48px, 28px);
+$line-height-h2: calculateRem(42px, 28px);
+$line-height-h3: calculateRem(36px, 28px);
+$line-height-h4: calculateRem(32px, 28px);
+$line-height-h5: calculateRem(28px, 28px);
+$line-height-body1: calculateRem(28px, 20px);
+$line-height-body2: calculateRem(24px, 20px);
+$line-height-body3: calculateRem(20px, 20px);
+$line-height-subtitle1: calculateRem(24px, 20px);
+$line-height-subtitle2: calculateRem(20px, 20px);
+$line-height-caption1: calculateRem(18px, 16px);
+$line-height-caption2: calculateRem(16px, 16px);
+$line-height-label: calculateRem(20px, 20px);
+$line-height-button: calculateRem(20px, 20px);
 
 $font-weight-light: 300;
 $font-weight-regular: 400;
@@ -82,3 +95,33 @@ $font-weight-bold: 700;
 
 $font-family-krungthai-fast: Krungthai Fast;
 $font-family-krungthai-smart: Krungthai Smart;
+
+// CSS Easing
+$linear: 'cubic-bezier(0.25, 0.25, 0.75, 0.75)';
+$ease: 'cubic-bezier(0.25, 0.1, 0.25, 1)';
+$easeIn: 'cubic-bezier(0.42, 0, 1, 1)';
+$easeOut: 'cubic-bezier(0, 0, 0.58, 1)';
+$easeInOut: 'cubic-bezier(0.42, 0, 0.58, 1)';
+$easeInQuad: 'cubic-bezier(0.55, 0.085, 0.68, 0.53)';
+$easeInCubic: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)';
+$easeInQuart: 'cubic-bezier(0.895, 0.03, 0.685, 0.22)';
+$easeInQuint: 'cubic-bezier(0.755, 0.05, 0.855, 0.06)';
+$easeInSine: 'cubic-bezier(0.47, 0, 0.745, 0.715)';
+$easeInExpo: 'cubic-bezier(0.95, 0.05, 0.795, 0.035)';
+$easeInCirc: 'cubic-bezier(0.6, 0.04, 0.98, 0.335)';
+$easeInBack: 'cubic-bezier(0.6, -0.28, 0.735, 0.045)';
+$easeOutQuad: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+$easeOutCubic: 'cubic-bezier(0.215, 0.61, 0.355, 1)';
+$easeOutQuart: 'cubic-bezier(0.165, 0.84, 0.44, 1)';
+$easeOutQuint: 'cubic-bezier(0.23, 1, 0.32, 1)';
+$easeOutSine: 'cubic-bezier(0.39, 0.575, 0.565, 1)';
+$easeOutExpo: 'cubic-bezier(0.19, 1, 0.22, 1)';
+$easeOutCirc: 'cubic-bezier(0.075, 0.82, 0.165, 1)';
+$easeOutBack: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+$easeInOutQuad: 'cubic-bezier(0.455, 0.03, 0.515, 0.955)';
+$easeInOutCubic: 'cubic-bezier(0.645, 0.045, 0.355, 1)';
+$easeInOutQuart: 'cubic-bezier(0.77, 0, 0.175, 1)';
+$easeInOutQuint: 'cubic-bezier(0.86, 0, 0.07, 1)';
+$easeInOutSine: 'cubic-bezier(0.445, 0.05, 0.55, 0.95)';
+$easeInOutExpo: 'cubic-bezier(1, 0, 0, 1)';
+$easeInOutCirc: 'cubic-bezier(0.785, 0.135, 0.15, 0.86)';
