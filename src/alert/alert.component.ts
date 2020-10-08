@@ -1,5 +1,15 @@
 import { coerceBooleanProperty } from '@angular/cdk/coercion'
-import { Component, OnInit, OnDestroy, Input, HostBinding, Host, Output, EventEmitter } from '@angular/core'
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  Input,
+  HostBinding,
+  Host,
+  Output,
+  EventEmitter,
+  ViewEncapsulation
+} from '@angular/core'
 import { Subscription } from 'rxjs'
 import { Alert, AlertType } from './alert.model'
 import { AlertService } from './alert.service'
@@ -7,10 +17,11 @@ import { AlertService } from './alert.service'
 @Component({
   selector: 'ktbAlert',
   templateUrl: './alert.component.html',
-  styleUrls: ['./alert.component.scss']
+  styleUrls: ['./alert.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AlertComponent implements OnInit {
-  alert: any
+  private alert: any
 
   @Input() get alertObj(): Alert {
     return this.alert
