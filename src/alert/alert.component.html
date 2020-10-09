@@ -1,9 +1,9 @@
-<ng-container *ngIf="alert">
+<!-- <ng-container *ngIf="alert">
   <div ktbContainer>
     <div class="{{ alertStyle(alert) }}">
-      <div class="iconContainer">
+      <div class="icon-container">
         <p>Icon</p>
-        <!--<ktb-icons class="icon-margin" name="tick"></ktb-icons>-->
+        <ktb-icons class="icon-margin" name="tick"></ktb-icons>
       </div>
       <div class="{{ alertStyle(alert) }}--text">
         <span [innerHTML]="alert.message"></span>
@@ -11,7 +11,21 @@
           <a [href]="link.href" target="_blank"> {{ link.text }}</a>
         </ng-container>
       </div>
-      <a class="close" (click)="alert = undefined">&times;</a>
+      <a class="close" (click)="handleClick($event)">{{ linkLabel }}</a>
     </div>
   </div>
-</ng-container>
+</ng-container> -->
+
+<div ktbContainer *ngIf="isVisible">
+  <div class="alert-icon">
+    <ktb-icon class="icon-margin" name="correct"></ktb-icon>
+    <!-- <ktb-icon class="icon-margin" name="incorrent"></ktb-icon> 
+    <ktb-icon class="icon-margin" name="formWarning"></ktb-icon>  -->
+  </div>
+  <div class="alert-body">
+    <span>{{ message }}</span>
+    <div *ngFor="let link of linkLabel">
+      <a [href]="link.href" (click)="handleClick($event)">{{ link.text }}</a>
+    </div>
+  </div>
+</div>

@@ -2,56 +2,59 @@ import { coerceBooleanProperty } from '@angular/cdk/coercion'
 import {
   Component,
   OnInit,
-  OnDestroy,
   Input,
+  ViewEncapsulation,
   HostBinding,
-  Host,
   Output,
   EventEmitter,
-  ViewEncapsulation
+  ElementRef
 } from '@angular/core'
-import { Subscription } from 'rxjs'
-import { Alert, AlertLink, AlertType } from './alert.model'
-import { AlertService } from './alert.service'
+import { Alert, AlertType } from './alert.model'
 
 @Component({
-  selector: 'ktbAlert',
+  selector: '{ktbAlert}',
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class AlertComponent implements OnInit {
-  alert: any
+  @Input() type: AlertType = AlertType.Warning
+  @Input() message: string
+  @Input() linkLabel: any[]
+  @Output() labelClick = new EventEmitter<MouseEvent>()
 
-  @Input() get alertObj(): Alert {
-    return this.alert
-  }
-  set alertObj(obj: Alert) {
-    this.alert = Object.assign({}, obj)
-  }
+  isVisible = true
 
-  constructor(private alertService: AlertService) {}
-
-  ngOnInit(): void {
-    this.alertService.currentOption.subscribe((alert) => {
-      if (alert) {
-        this.alert = alert
-      }
-    })
+  @HostBinding('class.ktb-alert') get defaultAlert(): boolean {
+    return true
   }
 
-  alertStyle(alert: Alert): any {
-    if (!alert) return
+  @HostBinding('class.ktb-button--primary') get primaryButton(): boolean {
+    if (Object.values(AlertType).includes(this.type)) return this.type === AlertType.Success
+    return coerceBooleanProperty(this.type)
+  }
 
-    const classes = []
+  @HostBinding('class.alert--success') get successAlert(): boolean {
+    return `${this.type}` === AlertType.Success
+  }
 
-    const alertType = {
-      [AlertType.Success]: 'success',
-      [AlertType.Error]: 'error',
-      [AlertType.Warning]: 'alert'
-    }
+  @HostBinding('class.alert--warn') get warnAlert(): boolean {
+    return `${this.type}` === AlertType.Warning
+  }
 
-    classes.push(alertType[alert.type])
-    return classes.join(' ')
+  @HostBinding('class.alert--error') get errorAlert(): boolean {
+    return `${this.type}` === AlertType.Error
+  }
+
+  constructor(public elementRef: ElementRef) {}
+
+  ngOnInit(): void {}
+
+  public handleClick(event: MouseEvent): void {
+    this.labelClick.emit(event)
+  }
+
+  public getHostElement(): HTMLElement {
+    return this.elementRef.nativeElement
   }
 }

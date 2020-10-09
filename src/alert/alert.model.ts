@@ -1,6 +1,5 @@
 export class Alert {
-  type: AlertType
-  message: string
+  details: AlertDetails[]
   link: AlertLink[]
 
   constructor(init?: Partial<Alert>) {
@@ -9,12 +8,17 @@ export class Alert {
 }
 
 export enum AlertType {
-  Success,
-  Error,
-  Warning
+  Success = 'success',
+  Warning = 'warning',
+  Error = 'error'
 }
 
 export interface AlertLink {
   text: string
   href: string
+}
+
+export interface AlertDetails {
+  message: string
+  type: AlertType
 }

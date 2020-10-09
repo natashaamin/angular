@@ -1,24 +1,18 @@
 import { Component, EventEmitter, ViewEncapsulation, Output, OnInit } from '@angular/core'
+import { ActivationStart } from '@angular/router'
 import { moduleMetadata, storiesOf } from '@storybook/angular'
-import { AlertModule, AlertService } from 'ktb-ui-components/alert'
+import { AlertModule } from 'ktb-ui-components/alert'
+import { AlertType } from './alert.model'
+
+import { action } from '@storybook/addon-actions'
 
 @Component({
   selector: 'alert-dynamic-button',
   template: `
-    <ktbAlert></ktbAlert>
-    <div>
-      <button class="btn btn-success m-1" (click)="showAlert(1, 'Aaaaaaaaaaaaaaaaa')">
-        Success
-      </button>
-      <button class="btn btn-danger m-1" (click)="showAlert(2, 'I wanna')">
-        Error
-      </button>
-      <button class="btn btn-warning m-1" (click)="showAlert(3, 'Travis Scott is lit')">
-        Warning
-      </button>
-    </div>
-  `,
-  providers: [AlertService]
+    <button class="btn btn-success m-1" type="'${AlertType.Warning}'">
+      Success
+    </button>
+  `
 })
 class AlertDynamicComponent {
   links = [
@@ -28,11 +22,7 @@ class AlertDynamicComponent {
     }
   ]
 
-  constructor(private alertService: AlertService) {}
-
-  showAlert(option, message): void {
-    this.alertService.onClickButton(option, message, this.links)
-  }
+  constructor() {}
 }
 
 storiesOf('Alert Notification', module)
@@ -44,35 +34,21 @@ storiesOf('Alert Notification', module)
   )
   .add('Basic', () => ({
     template: `
-              <ktbAlert [alertObj]="{
-                option: 1,
-                type: 0,
-                message: 'ALERT: These are scam calls targeting customers to make bank transfers. DO NOT disclose any account details, USER Id, PINS or SMS OTPs.',
-                link: links
-              }">
-              </ktbAlert>
-              <ktbAlert [alertObj]="{
-                option: 2,
-                type: 1,
-                message: 'ALERT: These are scam calls targeting customers to make bank transfers. DO NOT disclose any account details, USER Id, PINS or SMS OTPs.',
-                link: links
-              }">
-              </ktbAlert>
-              <ktbAlert [alertObj]="{
-                option: 3,
-                type: 2,
-                message: 'ALERT: These are scam calls targeting customers to make bank transfers. DO NOT disclose any account details, USER Id, PINS or SMS OTPs.',
-                link: links
-              }">
-              </ktbAlert>
-            `,
+      <ktbAlert 
+        type="success"
+        message="helloooo" 
+        [linkLabel]="links" 
+      >
+      </ktbAlert>
+    `,
     props: {
       links: [
         {
           href: 'https://google.com',
           text: 'Learn more.'
         }
-      ]
+      ],
+      labelClick: action('labelClick')
     },
     encapsulation: ViewEncapsulation.None
   }))
