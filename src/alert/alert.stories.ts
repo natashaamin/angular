@@ -9,7 +9,7 @@ import { action } from '@storybook/addon-actions'
 @Component({
   selector: 'alert-dynamic-button',
   template: `
-    <button class="btn btn-success m-1" type="'${AlertType.Warning}'">
+    <button type="'${AlertType.Warning}'">
       Success
     </button>
   `
@@ -34,12 +34,9 @@ storiesOf('Alert Notification', module)
   )
   .add('Basic', () => ({
     template: `
-      <ktbAlert 
-        type="success"
-        message="helloooo" 
-        [linkLabel]="links" 
-      >
-      </ktbAlert>
+      <ktbAlert inputpls="i_want_success" message="helloooo" [linkLabel]="links"></ktbAlert>
+      <ktbAlert inputpls="i_want_warn" message="helloooo" [linkLabel]="links"></ktbAlert>
+      <ktbAlert inputpls="i_want_error" message="helloooo" [linkLabel]="links"></ktbAlert>
     `,
     props: {
       links: [

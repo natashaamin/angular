@@ -42,8 +42,8 @@
     padding-left: 22px;
   }
   .alert-body {
-    background: #fee9eb;
-    border: 1px solid $error;
+    background: $golden-yellow-50;
+    border: 1px solid $golden-yellow-400;
   }
   .alert-text {
     color: $error;
@@ -55,8 +55,8 @@
     padding-left: 22px;
   }
   .alert-body {
-    background: $golden-yellow-50;
-    border: 1px solid $golden-yellow-400;
+    background: #fee9eb;
+    border: 1px solid $error;
   }
   .alert-text {
     color: $dark-grey;

@@ -19,6 +19,7 @@ import { Alert, AlertType } from './alert.model'
 })
 export class AlertComponent implements OnInit {
   @Input() type: AlertType = AlertType.Warning
+  @Input() inputpls: any
   @Input() message: string
   @Input() linkLabel: any[]
   @Output() labelClick = new EventEmitter<MouseEvent>()
@@ -46,9 +47,23 @@ export class AlertComponent implements OnInit {
     return `${this.type}` === AlertType.Error
   }
 
+  @HostBinding('class.alert--success') get inputpls_success(): boolean {
+    return this.inputpls === 'i_want_success'
+  }
+
+  @HostBinding('class.alert--warn') get inputpls_warn(): boolean {
+    return this.inputpls === 'i_want_warn'
+  }
+
+  @HostBinding('class.alert--error') get inputpls_error(): boolean {
+    return this.inputpls === 'i_want_error'
+  }
+
   constructor(public elementRef: ElementRef) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.elementRef)
+  }
 
   public handleClick(event: MouseEvent): void {
     this.labelClick.emit(event)
