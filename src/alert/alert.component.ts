@@ -18,7 +18,7 @@ import { Alert, AlertType } from './alert.model'
   encapsulation: ViewEncapsulation.None
 })
 export class AlertComponent implements OnInit {
-  @Input() type: AlertType = AlertType.Warning
+  @Input() type: AlertType = AlertType.Success
   @Input() message: string
   @Input() linkLabel: any[]
   @Output() labelClick = new EventEmitter<MouseEvent>()
@@ -48,7 +48,9 @@ export class AlertComponent implements OnInit {
 
   constructor(public elementRef: ElementRef) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.type)
+  }
 
   public handleClick(event: MouseEvent): void {
     this.labelClick.emit(event)

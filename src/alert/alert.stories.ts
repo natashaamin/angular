@@ -9,7 +9,7 @@ import { action } from '@storybook/addon-actions'
 @Component({
   selector: 'alert-dynamic-button',
   template: `
-    <button class="btn btn-success m-1" type="'${AlertType.Warning}'">
+    <button class="btn btn-success m-1" [type]="'${AlertType.Warning}'">
       Success
     </button>
   `
@@ -36,7 +36,19 @@ storiesOf('Alert Notification', module)
     template: `
       <ktbAlert 
         type="success"
-        message="helloooo" 
+        message="ALERT: These are scam calls targeting customers to make bank transfers. DO NOT disclose any account details, USER Id, PINS or SMS OTPs." 
+        [linkLabel]="links" 
+      >
+      </ktbAlert>
+      <ktbAlert 
+        type="warning"
+        message="ALERT: These are scam calls targeting customers to make bank transfers. DO NOT disclose any account details, USER Id, PINS or SMS OTPs." 
+        [linkLabel]="links" 
+      >
+      </ktbAlert>
+      <ktbAlert 
+        type="error"
+        message="ALERT: These are scam calls targeting customers to make bank transfers. DO NOT disclose any account details, USER Id, PINS or SMS OTPs." 
         [linkLabel]="links" 
       >
       </ktbAlert>
