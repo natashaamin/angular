@@ -48,9 +48,7 @@ export class AlertComponent implements OnInit {
 
   constructor(public elementRef: ElementRef) {}
 
-  ngOnInit(): void {
-    console.log(this.type)
-  }
+  ngOnInit(): void {}
 
   public handleClick(event: MouseEvent): void {
     this.labelClick.emit(event)
